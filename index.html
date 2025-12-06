@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karla Pagkalinawan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: linear-gradient(90deg, #6366f1, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .card { transition: transform 0.3s, box-shadow 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2); }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+    
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold gradient-text">Karla Pagkalinawan</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-primary">Home</a>
+                    <a href="#about" class="nav-link hover:text-primary">About</a>
+                    <a href="#skills" class="nav-link hover:text-primary">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-primary">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-primary">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="menu" class="hidden md:hidden bg-slate-900 border-t border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 hover:bg-slate-800 rounded">Home</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-slate-800 rounded">About</a>
+                <a href="#skills" class="block px-3 py-2 hover:bg-slate-800 rounded">Skills</a>
+                <a href="#projects" class="block px-3 py-2 hover:bg-slate-800 rounded">Projects</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-slate-800 rounded">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10 fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Hi, I'm <span class="gradient-text">Karla Pagkalinawan</span></h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-4">UI/UX Enthusiast | 4th Year IT Student</p>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Creating functional and user-friendly web applications at Universidad de Dagupan.</p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#projects" class="bg-gradient-to-r from-primary to-secondary px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">View My Work</a>
+                <a href="#contact" class="border-2 border-primary px-8 py-3 rounded-full font-semibold hover:bg-primary/10 transition-all">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <p class="text-gray-300 mb-4">Hi! I'm Karla Pagkalinawan, a 4th Year IT student at Universidad de Dagupan. I'm passionate about web development and UI/UX design.</p>
+                    <p class="text-gray-300 mb-4">I've been learning Laravel, React Native, Node.js, and MySQL through school projects. I enjoy building things and solving problems.</p>
+                    <div class="flex gap-3 mt-6 flex-wrap">
+                        <span class="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold">Aspiring Developer</span>
+                        <span class="bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold">UI/UX Enthusiast</span>
+                        <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-semibold">Always Learning</span>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-2xl opacity-30"></div>
+                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30">
+                            <img src="images/profile.jpg" alt="Karla Pagkalinawan" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Tech Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-red-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-red-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">🔺</span>
+                    </div>
+                    <h3 class="font-bold mb-1">Laravel</h3>
+                    <p class="text-xs text-gray-400">PHP Framework</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-cyan-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">📱</span>
+                    </div>
+                    <h3 class="font-bold mb-1">React Native</h3>
+                    <p class="text-xs text-gray-400">Mobile</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-yellow-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-yellow-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-2xl text-yellow-400 font-mono font-bold">{}</span>
+                    </div>
+                    <h3 class="font-bold mb-1">JavaScript</h3>
+                    <p class="text-xs text-gray-400">Programming</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-blue-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-blue-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">🗄️</span>
+                    </div>
+                    <h3 class="font-bold mb-1">MySQL</h3>
+                    <p class="text-xs text-gray-400">Database</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-cyan-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">💨</span>
+                    </div>
+                    <h3 class="font-bold mb-1">Tailwind CSS</h3>
+                    <p class="text-xs text-gray-400">CSS Framework</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-green-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">⚙️</span>
+                    </div>
+                    <h3 class="font-bold mb-1">Node.js</h3>
+                    <p class="text-xs text-gray-400">Backend</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-purple-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-purple-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">🔀</span>
+                    </div>
+                    <h3 class="font-bold mb-1">Git & GitHub</h3>
+                    <p class="text-xs text-gray-400">Version Control</p>
+                </div>
+
+                <div class="card bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-green-500/50">
+                    <div class="w-16 h-16 mx-auto mb-3 bg-green-500/20 rounded-full flex items-center justify-center">
+                        <span class="text-3xl">🔌</span>
+                    </div>
+                    <h3 class="font-bold mb-1">REST API</h3>
+                    <p class="text-xs text-gray-400">API Development</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="card bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
+                    <div class="h-48 overflow-hidden"><img src="images/iris.png" alt="IRIS System" class="w-full h-full object-cover"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">IRIS</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Recruitment management platform built with Laravel for job applications and applicant tracking.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs">Laravel</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">MySQL</span>
+                        </div>
+                        <a href="https://github.com/KarlaPagkalinawan/iris" target="_blank" class="text-primary hover:text-secondary transition-colors">View Code →</a>
+                    </div>
+                </article>
+
+                <article class="card bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
+                    <div class="h-48 overflow-hidden"><img src="images/klanotes.png" alt="Klanotes App" class="w-full h-full object-cover"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Klanotes</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Full-stack note taking app built with React Native and Node.js with MySQL backend.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-xs">React Native</span>
+                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs">Node.js</span>
+                        </div>
+                        <a href="https://github.com/KarlaPagkalinawan/klanotes" target="_blank" class="text-primary hover:text-secondary transition-colors">View Code →</a>
+                    </div>
+                </article>
+
+                <article class="card bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
+                    <div class="h-48 overflow-hidden"><img src="images/portfolio.png" alt="Portfolio Website" class="w-full h-full object-cover"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Accessible Portfolio</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Portfolio website focused on accessibility, built with HTML and CSS following WCAG guidelines.</p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-xs">HTML5</span>
+                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">CSS3</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/KarlaPagkalinawan/portfolio" target="_blank" class="text-primary hover:text-secondary transition-colors text-sm">View Code →</a>
+                            <a href="https://karlapagkalinawan.github.io/portfolio/" target="_blank" class="text-primary hover:text-secondary transition-colors text-sm">Live Demo →</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-primary/50 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <a href="mailto:karlamae.pagkainawan@email.com" class="text-gray-400 hover:text-primary transition-colors text-sm">karlamae.pagkainawan@email.com</a>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center hover:border-primary/50 transition-all">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <a href="https://github.com/KarlaPagkalinawan" target="_blank" class="text-gray-400 hover:text-primary transition-colors">@KarlaPagkalinawan</a>
+                </div>
+            </div>
+            <form class="bg-slate-800/50 p-8 rounded-lg border border-slate-700">
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Name</label>
+                    <input type="text" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Email</label>
+                    <input type="email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="your.email@example.com">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Message</label>
+                    <textarea rows="5" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your message..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all">Send Message</button>
+            </form>
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="https://linkedin.com/in/karlapagkalinawan" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/KarlaPagkalinawan" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2024 Karla Pagkalinawan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
